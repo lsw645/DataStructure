@@ -15,8 +15,16 @@ public class Main {
         searchBinaryTree.put(-216);
         searchBinaryTree.put(17);
         searchBinaryTree.put(-15);
-        searchBinaryTree.postOrderTreversal(searchBinaryTree.root);
+        searchBinaryTree.displayTreeByStack();
+        searchBinaryTree.midOrder(searchBinaryTree.root);
+        searchBinaryTree.delNode(1);
+        searchBinaryTree.displayTreeByStack();
+        searchBinaryTree.delNode(3);
+        searchBinaryTree.displayTreeByStack();
+        searchBinaryTree.delNode(5);
 
-        searchBinaryTree.postOrder(searchBinaryTree.root);
+        searchBinaryTree.displayTreeByStack();
+        searchBinaryTree.displayTree();
+
     }
 }
