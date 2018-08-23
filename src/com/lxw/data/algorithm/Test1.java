@@ -1,4 +1,4 @@
-package com.lxw.data.stack;
+package com.lxw.data.algorithm;
 
 /**
  * <pre>
