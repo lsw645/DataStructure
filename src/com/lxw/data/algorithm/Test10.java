@@ -32,7 +32,7 @@ class Test10 {
         head2.next.next = new Node(6);
         head2.next.next.next = new Node(8);
 
-        Node head = mergeNode(head1, head2);
+        Node head = mergeNode2(head1, head2);
         while (head != null) {
             System.out.print(head.data + "->");
             head = head.next;
@@ -56,6 +56,40 @@ class Test10 {
             node.next = mergeNode(node2.next, node1);
         }
         return node;
+    }
+
+    /**
+     * 使用迭代代替 递归
+     *
+     * @return
+     */
+    private static Node mergeNode2(Node node1, Node node2) {
+        if (node1 == null) {
+            return node2;
+        }
+        if (node2 == null) {
+            return node1;
+        }
+        Node node = new Node(0);
+        Node temp = node;
+        while (node1 != null && node2 != null) {
+            if (node1.data < node2.data) {
+                node.next = node1;
+                node1 = node1.next;
+            } else {
+                node.next = node2;
+                node2 = node2.next;
+            }
+            node = node.next;
+        }
+        if (node1 != null) {
+            node.next = node1;
+        }
+        if (node2 != null) {
+            node.next = node2;
+        }
+
+        return temp.next;
     }
 
 
