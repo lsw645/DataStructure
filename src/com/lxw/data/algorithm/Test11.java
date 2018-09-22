@@ -52,6 +52,25 @@ class Test11 {
             }
 
         }
+    }
+
+    private static void prints(int[][] nums) {
+        if (nums == null) {
+            return;
+        }
+        int rows = nums.length;
+        int columns = nums[0].length;
+        int i = 0;
+        while (2 * i + 1 < rows && 2 * i + 1 <= columns) {
+            printRing(nums, i, rows, columns);
+            ++i;
+        }
+
+    }
+
+    private static void printRing(int[][] nums, int start, int rows, int columns) {
+        int endRow = rows - 1 - start;
+        int endCol = columns - 1 - start;
 
     }
 }
