@@ -291,14 +291,14 @@ public class SearchBinaryTree {
         boolean isRowEmpty = false;
         System.out.println(
                 "......................................................");
-        while (isRowEmpty == false) {
+        while (!isRowEmpty) {
             Stack<TreeNode> localStack = new Stack();
             isRowEmpty = true;
 
             for (int j = 0; j < nBlanks; j++)
                 System.out.print(' ');
 
-            while (globalStack.isEmpty() == false) {
+            while (!globalStack.isEmpty()) {
                 TreeNode temp = globalStack.pop();
                 if (temp != null) {
                     System.out.print(temp.data);
@@ -318,7 +318,7 @@ public class SearchBinaryTree {
             }  // end while globalStack not empty
             System.out.println();
             nBlanks /= 2;
-            while (localStack.isEmpty() == false)
+            while (!localStack.isEmpty())
                 globalStack.push(localStack.pop());
         }  // end while isRowEmpty is false
         System.out.println(
